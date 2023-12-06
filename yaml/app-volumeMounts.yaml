@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-with-volume-mounts
+spec:
+  containers:
+    - name: my-container
+      image: nginx
+      volumeMounts:
+        - name: my-volume
+          mountPath: /data
+  volumes:
+    - name: my-volume
+      hostPath:
+        path: /path/on/host
